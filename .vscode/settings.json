@@ -1,0 +1,13 @@
+{
+    "python.pythonPath": "/miniconda3/envs/pyspeckle/bin/python",
+    "python.unitTest.unittestArgs": [
+        "-v",
+        "-s",
+        "./speckle",
+        "-p",
+        "test*.py"
+    ],
+    "python.unitTest.pyTestEnabled": false,
+    "python.unitTest.nosetestsEnabled": false,
+    "python.unitTest.unittestEnabled": true
+}

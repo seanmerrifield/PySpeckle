@@ -228,7 +228,7 @@ class SpeckleApiClient():
         if self.check_response_status_code(r):
             return r.json()
         return None
-
+ 
     def ObjectGetBulkAsync(self, objectIds, query=""):
         '''
         Get a list of objects at once
@@ -279,6 +279,9 @@ class SpeckleApiClient():
     def ProjectUpdateAsync(string, SpeckleCore.Project, System.Threading.CancellationToken):
         raise NotImplmentedError
     '''
+
+    def ProjectCreateAsync(self, project):
+        pass
     
     def StreamCloneAsync(self, streamId):
         raise NotImplmentedError
@@ -288,11 +291,12 @@ class SpeckleApiClient():
         Create new stream
         '''
         url = self.server + "/streams"
-        r = session.post(url, data=json.dumps(stream))
+        r = self.session.post(url, data=json.dumps(stream))
 
         if self.check_response_status_code(r):
             return r.json()
-        return None 
+        #return None 
+        return r.json()
 
     def StreamDeleteAsync(self, streamId):
         '''
@@ -427,3 +431,5 @@ class SpeckleApiClient():
             return r.json()
         return None
     
+if __name__ == "__main__":
+    s = SpeckleApiClient()
