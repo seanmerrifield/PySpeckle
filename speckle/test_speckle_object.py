@@ -22,7 +22,7 @@ class TestSpeckleStream(unittest.TestCase):
         return header + ' responded with None'
     
 
-     def test_get_object(self):
+    def test_get_object(self):
         r = self.s.ObjectGetAsync(self.test_object)
 
         self.assertIsNotNone(r, self.none_msg('ObjectGetAsync'))
@@ -61,6 +61,57 @@ class TestSpeckleStream(unittest.TestCase):
         resource = r['resources'][0]
         self.assertTrue(resource['_id'])
 
+    def test_create_mesh_object(self):
+        obj = {
+            "owner": self.user['username'],
+            "private": False,
+            "anonymousComments": True,
+            "canRead": [],
+            "canWrite": [],
+            "comments": [],
+            "deleted": False,
+            "type": "Mesh",
+            "hash": "hash",
+            "geometryHash": "Type.hash",
+            "applicationId": "GUID",
+            "name": "Object Doe",
+            "properties": {},
+            "parent": None,
+            "children": [],
+            "ancestors": [],
+            "transform": [],
+            "vertices": [-2.6709675788879395,7.420193672180176,0.007017634343355894,-2.6617817878723145],
+            "faces": [0,1,2,3]
+        }
+
+        r = self.s.ObjectCreateAsync([obj])
+
+        self.assertIsNotNone(r, self.none_msg('ObjectCreateAsync'))
+        self.assertTrue(r['success'])
+        self.assertTrue(r['resources'])
+
+        #Check created object ID is in response
+        resource = r['resources'][0]
+        self.assertTrue(resource['_id'])
+
+    def test_update_object(self):
+        
+        geometry = {
+            "vertices": [0.0, 1.0, 2.0, 3.0],
+            "faces": [1,2,3]
+        }
+
+        props = {
+            'type': 'RCSlab', 
+            'material': 'Concrete'
+        }
+        data = {'properties': props}
+        data.update(geometry)
+        r = self.s.ObjectUpdateAsync(self.test_object, data)
+        self.assertIsNotNone(r)
+
+        #Todo: Look into why user is not authorized to update
+        self.assertTrue(r['success'])
 
 if __name__ == "__main__":
     unittest.main()

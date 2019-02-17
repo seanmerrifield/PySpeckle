@@ -13,6 +13,8 @@ class TestSpeckleStream(unittest.TestCase):
         self.user = {'email':'testuser@arup.com','password':'testpassword', 'username':'testuser'}
 
         self.test_stream = 'u_Gnn3_2d'
+        self.test_object = '5bcf2c7e3ff66c15abac431d'
+
         r =  self.s.UserLoginAsync(self.user), 'Test User Login was not successful'
         assert r is not None and r[0]['success'], 'Could not log in user'
         r = r[0]
@@ -96,7 +98,10 @@ class TestSpeckleStream(unittest.TestCase):
         r = self.s.StreamGetAsync(self.test_stream)
         assert r is not None and r['success'] == True, 'Could not get stream'
 
-        r = self.s.StreamCreate
+        r = self.s.StreamAddObjectAsync(self.test_stream, self.test_object)
+        self.assertIsNotNone(r)
+        self.assertTrue(r['success'])
 
+        
 if __name__ == "__main__":
     unittest.main()

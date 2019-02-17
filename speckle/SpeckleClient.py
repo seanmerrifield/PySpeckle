@@ -248,6 +248,11 @@ class SpeckleApiClient():
         url = self.server + "/objects/%s" % objectId
         r = self.session.put(url, json.dumps(speckle_object))
 
+        if self.check_response_status_code(r):
+            return r.json()
+        # return None
+        return r.json()
+
 
     def ObjectUpdatePropertiesAsync(objectId, prop):
         url = self.server + "/objects/%s/properties"
@@ -364,7 +369,22 @@ class SpeckleApiClient():
 
         if self.check_response_status_code(r):
             return r.json()
-        return None   
+        return None  
+
+    def StreamAddObjectAsync(self, streamId, objectId):
+        """
+        Add object to stream
+        """ 
+        assert streamId is not None
+        url = self.server + "/streams/%s" % streamId
+
+        obj = {'_id': objectId, "type": "Placeholder"}
+        objects = {'objects': [obj]}
+        r = self.session.put(url, json.dumps(objects))
+        if self.check_response_status_code(r):
+            return r.json()
+        # return None   
+        return r.json()      
 
     def UserGetAsync(self):
         url = self.server + "/accounts"
