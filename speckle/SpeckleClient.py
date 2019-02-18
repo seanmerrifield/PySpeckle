@@ -386,6 +386,23 @@ class SpeckleApiClient():
         # return None   
         return r.json()      
 
+    def StreamAddObjectsAsync(self, streamId, object_list):
+        """
+        Add objects to stream
+        """ 
+        assert streamId is not None
+        assert type(object_list) == list
+
+        url = self.server + "/streams/%s" % streamId
+
+        objects = [{'_id': objectId, "type": "Placeholder"} for objectId in object_list]
+        r = self.session.put(url, json.dumps(objects))
+        if self.check_response_status_code(r):
+            return r.json()
+        # return None   
+        return r.json()  
+  
+
     def UserGetAsync(self):
         url = self.server + "/accounts"
         r = self.session.get(url)
