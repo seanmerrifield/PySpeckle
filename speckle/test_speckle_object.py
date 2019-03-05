@@ -4,7 +4,7 @@ import os
 #Add project root to path
 sys.path.append('../..')
 
-from SpeckleClient import SpeckleApiClient
+from speckle.SpeckleClient import SpeckleApiClient
 
 
 class TestSpeckleStream(unittest.TestCase):
@@ -16,7 +16,11 @@ class TestSpeckleStream(unittest.TestCase):
 
         self.test_stream = 'tu-sdfklj'
         self.test_object = '5bcf2c7e3ff66c15abac431d'
-        assert self.s.UserLoginAsync(self.user), 'Test User Login was not successful'
+
+        login = self.s.UserLoginAsync(self.user)
+        assert login, 'Test User Login was not successful'
+
+        self.user['id'] = login['resource']['_id']
 
     def none_msg(self, header):
         return header + ' responded with None'
@@ -49,6 +53,38 @@ class TestSpeckleStream(unittest.TestCase):
             "children": [],
             "ancestors": [],
             "transform": []
+        }
+
+        r = self.s.ObjectCreateAsync([obj])
+
+        self.assertIsNotNone(r, self.none_msg('ObjectCreateAsync'))
+        self.assertTrue(r['success'])
+        self.assertTrue(r['resources'])
+
+        #Check created object ID is in response
+        resource = r['resources'][0]
+        self.assertTrue(resource['_id'])
+
+    def test_create_point_object(self):
+        obj  = {
+            "owner": self.user['username'],
+            "private": False,
+            "anonymousComments": True,
+            "canRead": [],
+            "canWrite": [],
+            "comments": [],
+            "deleted": False,
+            "type": "Point",
+            "hash": "hash",
+            "geometryHash": "Type.hash",
+            "applicationId": "GUID",
+            "name": "Object Doe",
+            "properties": {},
+            "parent": None,
+            "children": [],
+            "ancestors": [],
+            "transform": [],
+            "value": [0,0,0]
         }
 
         r = self.s.ObjectCreateAsync([obj])

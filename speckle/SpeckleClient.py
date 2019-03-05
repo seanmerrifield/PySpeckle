@@ -254,7 +254,7 @@ class SpeckleApiClient():
         return r.json()
 
 
-    def ObjectUpdatePropertiesAsync(objectId, prop):
+    def ObjectUpdatePropertiesAsync(self, objectId, prop):
         url = self.server + "/objects/%s/properties"
         r = self.session.put(url, json.dumps(prop))
 
@@ -278,16 +278,43 @@ class SpeckleApiClient():
     def ProjectGetAllAsync(System.Threading.CancellationToken):
         raise NotImplmentedError
 
-    def ProjectGetAsync(string, System.Threading.CancellationToken):
-        raise NotImplmentedError
-
-    def ProjectUpdateAsync(string, SpeckleCore.Project, System.Threading.CancellationToken):
-        raise NotImplmentedError
     '''
 
     def ProjectCreateAsync(self, project):
         pass
-    
+
+    def ProjectGetAsync(self, projectId, query=""):
+        url = self.server + "/projects/%s?%s" % (projectId, query)
+        r = self.session.get(url)
+        if self.check_response_status_code(r):
+            return r.json()
+        return None
+
+
+    def ProjectUpdateAsync(self, projectId, data):
+        assert projectId is not None
+        url = self.server + "/projects/%s" % projectId
+        r = self.session.put(url, json.dumps(data))
+
+        if self.check_response_status_code(r):
+            return r.json()
+        return None
+
+    def ProjectAddStreamAsync(self, projectId, streamId):
+        """
+        Add stream to project
+        """
+        assert projectId and streamId is not None
+        url = self.server + "/projects/%s" % projectId
+
+        stream = {'_id': streamId}
+        streams = {'streams': [stream]}
+        r = self.session.put(url, json.dumps(streams))
+        if self.check_response_status_code(r):
+            return r.json()
+        # return None
+        return r.json()
+
     def StreamCloneAsync(self, streamId):
         raise NotImplmentedError
 
