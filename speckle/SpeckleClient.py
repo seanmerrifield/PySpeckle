@@ -190,18 +190,38 @@ class SpeckleApiClient():
         raise NotImplmentedError
     '''
 
-    def ObjectCreateAsync(self, objectList):
+    def ObjectCreateAsync(self, objectList:list):
         '''
         Create objects
         '''
-        payload = []
-        for o in objectList:
-            if '_id' in o.keys():
-                del o['_id']
-            if 'hash' in o.keys():
-                del o['hash']
+        base = {
+            "owner": "unknown",
+            "private": False,
+            "anonymousComments": False,
+            "canRead": [],
+            "canWrite": [],
+            "comments": [],
+            "deleted": False,
+            "type": None,
+            "applicationId": None,
+            "name": None,
+            "properties": {},
+            "parent": None,
+            "children": [],
+            "ancestors": []
+        }
 
-            payload.append(o)
+        payload = []
+        for obj in objectList:
+            for prop in obj:
+                base[prop] = obj[prop]
+
+                if '_id' in base.keys():
+                    del base['_id']
+                if 'hash' in base.keys():
+                    del base['hash']
+
+            payload.append(base)
 
         url = self.server + "/objects"
         r = self.session.post(url, json.dumps(payload))
