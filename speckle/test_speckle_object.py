@@ -4,7 +4,7 @@ import os
 #Add project root to path
 sys.path.append('../..')
 
-from speckle.SpeckleClient import SpeckleApiClient
+from SpeckleClient import SpeckleApiClient
 
 
 class TestSpeckleStream(unittest.TestCase):

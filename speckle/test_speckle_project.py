@@ -3,7 +3,7 @@ import sys
 import os
 #Add project root to path
 sys.path.append('../..')
-from speckle.SpeckleClient import SpeckleApiClient
+from SpeckleClient import SpeckleApiClient
 
 class TestSpeckleStream(unittest.TestCase):
 
@@ -19,22 +19,28 @@ class TestSpeckleStream(unittest.TestCase):
 
         self.project = '5c7eb946be9a132091729f9e'
         self.stream = 'RKWgU-oWF'
+        
     def none_msg(self, header):
         return header + ' responded with None'
 
     def test_get_project(self):
-
         r = self.s.ProjectGetAsync(self.project)
         self.assertIsNotNone(r, self.none_msg('ProjectGetAsync'))
 
     def test_update_project(self):
-        data = {'name': "Amsterdam Project", 'description': "This is an Amsterdam project modified by the API", 'private': False}
+        data = {'name': "Amsterdam Project", 'description': "this is an Amsterdam project modified by the API", 'private': False}
         r = self.s.ProjectUpdateAsync(self.project, data)
-
         self.assertIsNotNone(r, self.none_msg('ProjectUpdateAsync'))
-
 
     def test_add_stream_to_project(self):
         r = self.s.ProjectAddStreamAsync(self.project, self.stream)
-
         self.assertIsNotNone(r, self.none_msg('ProjectUpdateAsync'))
+
+    def test_ProjectCreateAsync(self):
+        r = self.s.ProjectCreateAsync()
+        self.assertIsNotNone(r, self.none_msg('ProjectCreateAsync'))
+
+    def test_ProjectGetAllAsync(self):
+        r = self.s.ProjectGetAllAsync(self)
+        self.assertIsNotNone(r, self.none_msg('ProjectGetAllAsync'))
+

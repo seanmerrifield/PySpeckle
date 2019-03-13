@@ -1,4 +1,3 @@
-
 import requests, json, os
 import sqlite3, contextlib
 import struct, base64
@@ -96,10 +95,7 @@ class SpeckleApiClient():
                 for a in accounts:
                     profiles.append({'server_name':a[1], 'server':a[2], 'email':a[3], 'apitoken':a[4]})
         return profiles
-
-{'email':'testuser@arup.com','password':'testpassword', 'username':'testuser'} 
  
-
 
     def load_local_profiles(self, directory=None):
         profiles = []
@@ -299,6 +295,16 @@ class SpeckleApiClient():
         raise NotImplmentedError
     '''
 
+    # def RevitCreateStream(self, stream):
+    #     '''
+    #     Send a new stream to speckle API, check if project already exists   
+    #     '''
+    #     streamId = StreamCreateAsync(self, stream)
+
+    #     for project in ProjectGetAllAsync(self):
+    #         if stream['project_name'] == project['project_name']:
+    #             projectId = project['_id']
+    #             ProjectAddStreamAsync(self, projectId, streamId)
 
     def ProjectGetAllAsync(self, query=""):
         '''
@@ -311,19 +317,16 @@ class SpeckleApiClient():
             return r.json()
         return None
 
-
     def ProjectCreateAsync(self, project):
         '''
         Create new project
         '''
         url = self.server + "/projects"
-        r = self.session.post(url, data=json.dumps(stream))
+        r = self.session.post(url, data=json.dumps(project))
 
         if self.check_response_status_code(r):
             return r.json()
-        #return None 
-        return r.json()
-
+        return None 
 
     def ProjectGetAsync(self, projectId, query=""):
         url = self.server + "/projects/%s?%s" % (projectId, query)
@@ -331,7 +334,6 @@ class SpeckleApiClient():
         if self.check_response_status_code(r):
             return r.json()
         return None
-
 
     def ProjectUpdateAsync(self, projectId, data):
         assert projectId is not None
@@ -341,7 +343,6 @@ class SpeckleApiClient():
         if self.check_response_status_code(r):
             return r.json()
         return None
-
 
     def ProjectAddStreamAsync(self, projectId, streamId):
         """
