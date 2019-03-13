@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/miniconda3/envs/pyspeckle/bin/python",
+    "python.pythonPath": "venv\\Scripts\\python.exe",
     "python.unitTest.unittestArgs": [
         "-v",
         "-s",

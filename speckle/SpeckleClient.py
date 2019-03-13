@@ -97,6 +97,9 @@ class SpeckleApiClient():
                     profiles.append({'server_name':a[1], 'server':a[2], 'email':a[3], 'apitoken':a[4]})
         return profiles
 
+{'email':'testuser@arup.com','password':'testpassword', 'username':'testuser'} 
+ 
+
 
     def load_local_profiles(self, directory=None):
         profiles = []
@@ -294,14 +297,33 @@ class SpeckleApiClient():
 
     def ProjectDeleteAsync(string, System.Threading.CancellationToken):
         raise NotImplmentedError
-
-    def ProjectGetAllAsync(System.Threading.CancellationToken):
-        raise NotImplmentedError
-
     '''
 
+
+    def ProjectGetAllAsync(self, query=""):
+        '''
+        Get all projects available 
+        '''
+        url = self.server + "/projects?omit=streams"
+        r = self.session.get(url)
+
+        if self.check_response_status_code(r):
+            return r.json()
+        return None
+
+
     def ProjectCreateAsync(self, project):
-        pass
+        '''
+        Create new project
+        '''
+        url = self.server + "/projects"
+        r = self.session.post(url, data=json.dumps(stream))
+
+        if self.check_response_status_code(r):
+            return r.json()
+        #return None 
+        return r.json()
+
 
     def ProjectGetAsync(self, projectId, query=""):
         url = self.server + "/projects/%s?%s" % (projectId, query)
@@ -319,6 +341,7 @@ class SpeckleApiClient():
         if self.check_response_status_code(r):
             return r.json()
         return None
+
 
     def ProjectAddStreamAsync(self, projectId, streamId):
         """

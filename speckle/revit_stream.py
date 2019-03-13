@@ -1,8 +1,19 @@
-
 from .SpeckleClient import SpeckleApiClient
 s = SpeckleApiClient()
 
+import clr
+
+
 #Grab Project Name
+clr.AddReference('RevitAPI')
+from Autodesk.Revit.DB import*
+clr.AddReference('RevitServices')
+from RevitServices.Persistence import DocumentManager
+
+doc = DocumentManager.Instance.CurrentDBDocument
+path = doc.PathName
+
+OUT = (path.split('/')[-1]).split('.')[0]
 
 #Grab Username
 username = "test@arup.com"
