@@ -304,6 +304,48 @@ class TestSpeckleStream(unittest.TestCase):
 
         self.s.StreamAddObjectAsync(self.test_stream, resource['_id'])
 
+    def test_line_objects(self):
+            objects = [
+                {
+                    "type": "Line",
+                    "value": [
+                        0,
+                        0,
+                        0,
+                        1,
+                        1,
+                        1
+                    ],
+                },
+                {
+                    "type": "Line",
+                    "value": [
+                        -1,
+                        -1,
+                        -1,
+                        2,
+                        2,
+                        2
+                    ],
+                },
+            ]
+            r = self.s.ObjectCreateAsync(objects)
+
+            self.assertIsNotNone(r, self.none_msg('ObjectCreateAsync'))
+            self.assertTrue(r['success'])
+            self.assertTrue(r['resources'])
+
+            # Check created object ID is in response
+            resource = r['resources'][0]
+            self.assertTrue(resource['_id'])
+
+            print(resource['_id'])
+
+            self.s.StreamAddObjectAsync(self.test_stream, resource['_id'])
+
+
+
+
     def test_update_object(self):
         
         geometry = {

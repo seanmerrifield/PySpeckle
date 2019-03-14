@@ -194,25 +194,27 @@ class SpeckleApiClient():
         '''
         Create objects
         '''
-        base = {
-            "owner": "unknown",
-            "private": False,
-            "anonymousComments": False,
-            "canRead": [],
-            "canWrite": [],
-            "comments": [],
-            "deleted": False,
-            "type": None,
-            "applicationId": None,
-            "name": None,
-            "properties": {},
-            "parent": None,
-            "children": [],
-            "ancestors": []
-        }
-
+        
         payload = []
         for obj in objectList:
+            
+            base = {
+                "owner": "unknown",
+                "private": False,
+                "anonymousComments": False,
+                "canRead": [],
+                "canWrite": [],
+                "comments": [],
+                "deleted": False,
+                "type": None,
+                "applicationId": None,
+                "name": None,
+                "properties": {},
+                "parent": None,
+                "children": [],
+                "ancestors": []
+            }
+
             for prop in obj:
                 base[prop] = obj[prop]
 
