@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="923eea02-1452-4950-b2a9-86ab9088f311" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/PySpeckle.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PySpeckle.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/speckle/SpeckleClient.py" beforeDir="false" afterPath="$PROJECT_DIR$/speckle/SpeckleClient.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/speckle/test_speckle_object.py" beforeDir="false" afterPath="$PROJECT_DIR$/speckle/test_speckle_object.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +22,8 @@
     <SUITE FILE_PATH="coverage/PySpeckle$Unittests_for_test_speckle_object_TestSpeckleStream_test_create_point_object.coverage" NAME="Unittests for test_speckle_object.TestSpeckleStream.test_create_point_object Coverage Results" MODIFIED="1551986297320" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/speckle" />
     <SUITE FILE_PATH="coverage/PySpeckle$Unittests_for_test_speckle_project_TestSpeckleStream_test_get_project.coverage" NAME="Unittests for test_speckle_project.TestSpeckleStream.test_get_project Coverage Results" MODIFIED="1551978924268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/speckle" />
     <SUITE FILE_PATH="coverage/PySpeckle$Unittests_for_test_speckle_object_TestSpeckleStream_test_line_objects.coverage" NAME="Unittests for test_speckle_object.TestSpeckleStream.test_line_objects Coverage Results" MODIFIED="1552573258285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/speckle" />
-    <SUITE FILE_PATH="coverage/PySpeckle$Unittests_for_test_speckle_stream_TestSpeckleStream_test_add_objects_to_stream.coverage" NAME="Unittests for test_speckle_stream.TestSpeckleStream.test_add_objects_to_stream Coverage Results" MODIFIED="1551808744366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/speckle" />
     <SUITE FILE_PATH="coverage/PySpeckle$Unittests_for_test_speckle_stream_TestSpeckleStream_test_get_all_streams.coverage" NAME="Unittests for test_speckle_stream.TestSpeckleStream.test_get_all_streams Coverage Results" MODIFIED="1551810794348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/speckle" />
+    <SUITE FILE_PATH="coverage/PySpeckle$Unittests_for_test_speckle_stream_TestSpeckleStream_test_add_objects_to_stream.coverage" NAME="Unittests for test_speckle_stream.TestSpeckleStream.test_add_objects_to_stream Coverage Results" MODIFIED="1552574891205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/speckle" />
     <SUITE FILE_PATH="coverage/PySpeckle$Unittests_for_test_speckle_object_TestSpeckleStream.coverage" NAME="Unittests for test_speckle_object.TestSpeckleStream Coverage Results" MODIFIED="1551980036416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/speckle" />
     <SUITE FILE_PATH="coverage/PySpeckle$Unittests_for_test_speckle_object_TestSpeckleStream_test_create_mesh_object.coverage" NAME="Unittests for test_speckle_object.TestSpeckleStream.test_create_mesh_object Coverage Results" MODIFIED="1551988233733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/speckle" />
   </component>
@@ -91,11 +87,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/speckle/test_speckle_stream.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="118" column="8" selection-start-line="118" selection-start-column="8" selection-end-line="118" selection-end-column="75" />
+            <state relative-caret-position="199">
+              <caret line="113" column="30" selection-start-line="113" selection-start-column="30" selection-end-line="113" selection-end-column="30" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -103,11 +99,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/speckle/SpeckleClient.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="194" column="22" lean-forward="true" selection-start-line="194" selection-start-column="22" selection-end-line="194" selection-end-column="22" />
+            <state relative-caret-position="-952">
+              <caret line="195" column="11" lean-forward="true" selection-start-line="195" selection-start-column="11" selection-end-line="195" selection-end-column="11" />
               <folding>
                 <element signature="e#1#26#0" expanded="true" />
               </folding>
@@ -221,7 +217,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for test_speckle_object.TestSpeckleStream.test_line_objects">
+  <component name="RunManager" selected="Python tests.Unittests for test_speckle_stream.TestSpeckleStream.test_add_objects_to_stream">
     <configuration name="Unittests for test_speckle_object.TestSpeckleStream.test_create_mesh_object" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="PySpeckle" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -234,21 +230,6 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_speckle_object.TestSpeckleStream.test_create_mesh_object&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for test_speckle_object.TestSpeckleStream.test_create_object" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="PySpeckle" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/speckle" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_speckle_object.TestSpeckleStream.test_create_object&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -297,20 +278,35 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Unittests for test_speckle_stream.TestSpeckleStream.test_add_objects_to_stream" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="PySpeckle" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/speckle" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_speckle_stream.TestSpeckleStream.test_add_objects_to_stream&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Python tests.Unittests for test_speckle_object.TestSpeckleStream.test_create_object" />
       <item itemvalue="Python tests.Unittests for test_speckle_object.TestSpeckleStream.test_create_point_object" />
       <item itemvalue="Python tests.Unittests for test_speckle_object.TestSpeckleStream.test_create_mesh_object" />
       <item itemvalue="Python tests.Unittests for test_speckle_object.TestSpeckleStream.test_line_object" />
       <item itemvalue="Python tests.Unittests for test_speckle_object.TestSpeckleStream.test_line_objects" />
+      <item itemvalue="Python tests.Unittests for test_speckle_stream.TestSpeckleStream.test_add_objects_to_stream" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests for test_speckle_stream.TestSpeckleStream.test_add_objects_to_stream" />
         <item itemvalue="Python tests.Unittests for test_speckle_object.TestSpeckleStream.test_line_objects" />
         <item itemvalue="Python tests.Unittests for test_speckle_object.TestSpeckleStream.test_line_object" />
         <item itemvalue="Python tests.Unittests for test_speckle_object.TestSpeckleStream.test_create_mesh_object" />
         <item itemvalue="Python tests.Unittests for test_speckle_object.TestSpeckleStream.test_create_point_object" />
-        <item itemvalue="Python tests.Unittests for test_speckle_object.TestSpeckleStream.test_create_object" />
       </list>
     </recent_temporary>
   </component>
@@ -328,9 +324,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_test_speckle_object_TestSpeckleStream_test_create_mesh_object - 2019.03.07 at 20h 22m 17s.xml">
-      <configuration name="Unittests for test_speckle_object.TestSpeckleStream.test_create_mesh_object" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_for_test_speckle_object_TestSpeckleStream_test_line_object - 2019.03.07 at 20h 25m 12s.xml">
       <configuration name="Unittests for test_speckle_object.TestSpeckleStream.test_line_object" configurationId="tests" />
     </history-entry>
@@ -357,6 +350,9 @@
     </history-entry>
     <history-entry file="Unittests_for_test_speckle_object_TestSpeckleStream_test_line_object - 2019.03.07 at 20h 54m 34s.xml">
       <configuration name="Unittests for test_speckle_object.TestSpeckleStream.test_line_object" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_speckle_stream_TestSpeckleStream_test_add_objects_to_stream - 2019.03.14 at 15h 48m 18s.xml">
+      <configuration name="Unittests for test_speckle_stream.TestSpeckleStream.test_add_objects_to_stream" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -434,22 +430,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/speckle/test_speckle_stream.py">
+    <entry file="file://$PROJECT_DIR$/speckle/SpeckleClient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="118" column="8" selection-start-line="118" selection-start-column="8" selection-end-line="118" selection-end-column="75" />
+        <state relative-caret-position="-952">
+          <caret line="195" column="11" lean-forward="true" selection-start-line="195" selection-start-column="11" selection-end-line="195" selection-end-column="11" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#1#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/speckle/SpeckleClient.py">
+    <entry file="file://$PROJECT_DIR$/speckle/test_speckle_stream.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="194" column="22" lean-forward="true" selection-start-line="194" selection-start-column="22" selection-end-line="194" selection-end-column="22" />
+        <state relative-caret-position="199">
+          <caret line="113" column="30" selection-start-line="113" selection-start-column="30" selection-end-line="113" selection-end-column="30" />
           <folding>
-            <element signature="e#1#26#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
