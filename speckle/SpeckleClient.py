@@ -190,7 +190,7 @@ class SpeckleApiClient():
         raise NotImplmentedError
     '''
 
-    def ObjectCreateAsync(self, objectList:list):
+    def ObjectCreateAsync(self, objectList):
         '''
         Create objects
         '''
