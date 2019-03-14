@@ -295,16 +295,24 @@ class SpeckleApiClient():
         raise NotImplmentedError
     '''
 
-    # def RevitCreateStream(self, stream):
-    #     '''
-    #     Send a new stream to speckle API, check if project already exists   
-    #     '''
-    #     streamId = StreamCreateAsync(self, stream)
+    def StreamCreateInsert(self, stream, current_project):
+        '''
+        Create a new stream, add to existing project if there is one or create a new project  
+        '''
+        r = self.StreamCreateAsync(stream)
+        existing_projects = self.ProjectGetAllAsync(self)['resources']
 
-    #     for project in ProjectGetAllAsync(self):
-    #         if stream['project_name'] == project['project_name']:
-    #             projectId = project['_id']
-    #             ProjectAddStreamAsync(self, projectId, streamId)
+        for project in existing_projects:
+            if current_project['_id'] == project['_id']:
+                r = self.ProjectAddStreamAsync(current_project['_id'],  stream['streamId'])
+                break
+            else:
+                r = self.ProjectCreateAsync(current_project)
+                r = self.ProjectAddStreamAsync(current_project['_id'],  stream['streamId'])
+        if r['success'] == True:
+            return r
+        return None
+
 
     def ProjectGetAllAsync(self, query=""):
         '''
@@ -317,16 +325,17 @@ class SpeckleApiClient():
             return r.json()
         return None
 
-    def ProjectCreateAsync(self, project):
+    def ProjectCreateAsync(self, project_parameters):
         '''
         Create new project
-        '''
+        '''        
         url = self.server + "/projects"
-        r = self.session.post(url, data=json.dumps(project))
+        r = self.session.post(url, json.dumps(project_parameters))
 
         if self.check_response_status_code(r):
             return r.json()
         return None 
+ 
 
     def ProjectGetAsync(self, projectId, query=""):
         url = self.server + "/projects/%s?%s" % (projectId, query)
@@ -354,6 +363,7 @@ class SpeckleApiClient():
         stream = {'_id': streamId}
         streams = {'streams': [stream]}
         r = self.session.put(url, json.dumps(streams))
+        print(r)
         if self.check_response_status_code(r):
             return r.json()
         # return None

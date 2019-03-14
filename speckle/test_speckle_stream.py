@@ -3,7 +3,7 @@ import sys
 import os
 #Add project root to path
 sys.path.append('../..')
-
+from sample_data import sample_stream
 from speckle.SpeckleClient import SpeckleApiClient
 class TestSpeckleStream(unittest.TestCase):
 
@@ -101,8 +101,8 @@ class TestSpeckleStream(unittest.TestCase):
         "ancestors": []
         }
 
-        r = self.s.StreamCreateAsync(stream)
-
+        r = self.s.StreamCreateAsync(sample_stream)
+        print('yeeeeeeeeeeeeeeeeeeeeeeeeeew')
         self.assertIsNotNone(r, self.none_msg('StreamCreateAsync'))
         self.assertTrue(r['success'])
         self.assertTrue(r['resource'])
